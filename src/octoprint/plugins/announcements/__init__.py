@@ -66,9 +66,11 @@ class AnnouncementPlugin(octoprint.plugin.AssetPlugin,
 		                                        type="rss",
 		                                        url="http://plugins.octoprint.org/feed.xml")),
 		            enabled_channels=[],
-		            forced_channels=["_important"],
+		            #forced_channels=["_important"],
+					forced_channels=[], #tan
 		            ttl=6*60,
-		            display_limit=3,
+					#display_limit=3,
+		            display_limit=0, #tan
 		            summary_limit=300)
 
 	# AssetPlugin
