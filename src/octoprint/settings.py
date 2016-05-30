@@ -74,8 +74,8 @@ def settings(init=False, basedir=None, configfile=None):
 default_settings = {
 	"serial": {
 		"port": None,
-		"baudrate": None,
-		"autoconnect": False,
+		"baudrate": 250000, #tan
+		"autoconnect": True, #tan
 		"log": False,
 		"timeout": {
 			"detection": 0.5,
@@ -99,7 +99,7 @@ default_settings = {
 	"server": {
 		"host": "0.0.0.0",
 		"port": 5000,
-		"firstRun": True,
+		"firstRun": False,
 		"secretKey": None,
 		"reverseProxy": {
 			"prefixHeader": "X-Script-Name",
