@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-This module bundles all of OctoPrint's supported plugin implementation types as well as their common parent
+This module bundles all of 3DRaion's supported plugin implementation types as well as their common parent
 class, :class:`OctoPrintPlugin`.
 
 Please note that the plugin implementation types are documented in the section
@@ -15,7 +15,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 
 from .core import (Plugin, RestartNeedingPlugin)
@@ -23,7 +23,7 @@ from .core import (Plugin, RestartNeedingPlugin)
 
 class OctoPrintPlugin(Plugin):
 	"""
-	The parent class of all OctoPrint plugin mixins.
+	The parent class of all 3DRaion plugin mixins.
 
 	.. attribute:: _plugin_manager
 
@@ -101,7 +101,7 @@ class ReloadNeedingPlugin(Plugin):
 
 class StartupPlugin(OctoPrintPlugin):
 	"""
-	The ``StartupPlugin`` allows hooking into the startup of OctoPrint. It can be used to start up additional services
+	The ``StartupPlugin`` allows hooking into the startup of 3DRaion. It can be used to start up additional services
 	on or just after the startup of the server.
 	"""
 
@@ -129,14 +129,14 @@ class StartupPlugin(OctoPrintPlugin):
 
 class ShutdownPlugin(OctoPrintPlugin):
 	"""
-	The ``ShutdownPlugin`` allows hooking into the shutdown of OctoPrint. It's usually used in conjunction with the
+	The ``ShutdownPlugin`` allows hooking into the shutdown of 3DRaion. It's usually used in conjunction with the
 	:class:`StartupPlugin` mixin, to cleanly shut down additional services again that where started by the :class:`StartupPlugin`
 	part of the plugin.
 	"""
 
 	def on_shutdown(self):
 		"""
-		Called upon the imminent shutdown of OctoPrint.
+		Called upon the imminent shutdown of 3DRaion.
 		"""
 		pass
 
@@ -186,10 +186,10 @@ class AssetPlugin(OctoPrintPlugin, RestartNeedingPlugin):
 		           less=['less/my_styles.less']
 		        )
 
-		The assets will be made available by OctoPrint under the URL ``/plugin/<plugin identifier>/static/<path>``, with
+		The assets will be made available by 3DRaion under the URL ``/plugin/<plugin identifier>/static/<path>``, with
 		``plugin identifier`` being the plugin's identifier and ``path`` being the path as defined in the asset dictionary.
 
-		Assets of the types ``js``, ``css`` and ``less`` will be automatically bundled by OctoPrint using
+		Assets of the types ``js``, ``css`` and ``less`` will be automatically bundled by 3DRaion using
 		`Flask-Assets <http://flask-assets.readthedocs.org/en/latest/>`_.
 
 		:return dict: a dictionary describing the static assets to publish for the plugin
@@ -199,9 +199,9 @@ class AssetPlugin(OctoPrintPlugin, RestartNeedingPlugin):
 
 class TemplatePlugin(OctoPrintPlugin, ReloadNeedingPlugin):
 	"""
-	Using the ``TemplatePlugin`` mixin plugins may inject their own components into the OctoPrint web interface.
+	Using the ``TemplatePlugin`` mixin plugins may inject their own components into the 3DRaion web interface.
 
-	Currently OctoPrint supports the following types of injections out of the box:
+	Currently 3DRaion supports the following types of injections out of the box:
 
 	Navbar
 	   The right part of the navigation bar located at the top of the UI can be enriched with additional links. Note that
@@ -266,7 +266,7 @@ class TemplatePlugin(OctoPrintPlugin, ReloadNeedingPlugin):
 	   Template injection types in the settings
 
 	You can find an example for a simple plugin which injects navbar, tab and settings content into the interface in
-	the "helloworld" plugin in OctoPrint's :ref:`Plugin Tutorial <sec-plugins-gettingstarted>`.
+	the "helloworld" plugin in 3DRaion's :ref:`Plugin Tutorial <sec-plugins-gettingstarted>`.
 
 	Plugins may replace existing components, see the ``replaces`` keyword in the template configurations returned by
 	:meth:`.get_template_configs` below. Note that if a plugin replaces a core component, it is the plugin's
@@ -461,8 +461,8 @@ class SimpleApiPlugin(OctoPrintPlugin):
 	and/or want to react to simple commands which boil down to a type of command and a couple of flat parameters
 	supplied with it.
 
-	The simple API constructed by OctoPrint for you will be made available under ``/api/plugin/<plugin identifier>/``.
-	OctoPrint will do some preliminary request validation for your defined commands, making sure the request body is in
+	The simple API constructed by 3DRaion for you will be made available under ``/api/plugin/<plugin identifier>/``.
+	3DRaion will do some preliminary request validation for your defined commands, making sure the request body is in
 	the correct format (content type must be JSON) and contains all obligatory parameters for your command.
 
 	Let's take a look at a small example for such a simple API and how you would go about calling it.
@@ -556,35 +556,35 @@ class SimpleApiPlugin(OctoPrintPlugin):
 
 	def on_api_command(self, command, data):
 		"""
-		Called by OctoPrint upon a POST request to ``/api/plugin/<plugin identifier>``. ``command`` will contain one of
+		Called by 3DRaion upon a POST request to ``/api/plugin/<plugin identifier>``. ``command`` will contain one of
 		the commands as specified via :func:`get_api_commands`, ``data`` will contain the full request body parsed
 		from JSON into a Python dictionary. Note that this will also contain the ``command`` attribute itself. For the
 		example given above, for the ``command2`` request the ``data`` received by the plugin would be equal to
 		``dict(command="command2", some_parameter="some_value")``.
 
-		If your plugin returns nothing here, OctoPrint will return an empty response with return code ``204 No content``
+		If your plugin returns nothing here, 3DRaion will return an empty response with return code ``204 No content``
 		for you. You may also return regular responses as you would return from any Flask view here though, e.g.
 		``return flask.jsonify(result="some json result")`` or ``return flask.make_response("Not found", 404)``.
 
 		:param string command: the command with which the resource was called
 		:param dict data:      the full request body of the POST request parsed from JSON into a Python dictionary
-		:return: ``None`` in which case OctoPrint will generate a ``204 No content`` response with empty body, or optionally
+		:return: ``None`` in which case 3DRaion will generate a ``204 No content`` response with empty body, or optionally
 		         a proper Flask response.
 		"""
 		return None
 
 	def on_api_get(self, request):
 		"""
-		Called by OctoPrint upon a GET request to ``/api/plugin/<plugin identifier>``. ``request`` will contain the
+		Called by 3DRaion upon a GET request to ``/api/plugin/<plugin identifier>``. ``request`` will contain the
 		received `Flask request object <http://flask.pocoo.org/docs/0.9/api/#flask.Request>`_ which you may evaluate
 		for additional arguments supplied with the request.
 
-		If your plugin returns nothing here, OctoPrint will return an empty response with return code ``204 No content``
+		If your plugin returns nothing here, 3DRaion will return an empty response with return code ``204 No content``
 		for you. You may also return regular responses as you would return from any Flask view here though, e.g.
 		``return flask.jsonify(result="some json result")`` or ``return flask.make_response("Not found", 404)``.
 
 		:param request: the Flask request object
-		:return: ``None`` in which case OctoPrint will generate a ``204 No content`` response with empty body, or optionally
+		:return: ``None`` in which case 3DRaion will generate a ``204 No content`` response with empty body, or optionally
 		         a proper Flask response.
 		"""
 		return None
@@ -616,7 +616,7 @@ class BlueprintPlugin(OctoPrintPlugin, RestartNeedingPlugin):
 
 	   __plugin_implementation__ = MyBlueprintPlugin()
 
-	Your blueprint will be published by OctoPrint under the base URL ``/plugin/<plugin identifier>/``, so the above
+	Your blueprint will be published by 3DRaion under the base URL ``/plugin/<plugin identifier>/``, so the above
 	example of a plugin with the identifier "myblueprintplugin" would be reachable under
 	``/plugin/myblueprintplugin/echo``.
 
@@ -745,7 +745,7 @@ class BlueprintPlugin(OctoPrintPlugin, RestartNeedingPlugin):
 
 class SettingsPlugin(OctoPrintPlugin):
 	"""
-	Including the ``SettingsPlugin`` mixin allows plugins to store and retrieve their own settings within OctoPrint's
+	Including the ``SettingsPlugin`` mixin allows plugins to store and retrieve their own settings within 3DRaion's
 	configuration.
 
 	Plugins including the mixing will get injected an additional property ``self._settings`` which is an instance of
@@ -808,12 +808,12 @@ class SettingsPlugin(OctoPrintPlugin):
 		"""
 		Loads the settings for the plugin, called by the Settings API view in order to retrieve all settings from
 		all plugins. Override this if you want to inject additional settings properties that are not stored within
-		OctoPrint's configuration.
+		3DRaion's configuration.
 
 		.. note::
 
 		   The default implementation will return your plugin's settings as is, so just in the structure and in the types
-		   that are currently stored in OctoPrint's configuration.
+		   that are currently stored in 3DRaion's configuration.
 
 		   If you need more granular control here, e.g. over the used data types, you'll need to override this method
 		   and iterate yourself over all your settings, using the proper retriever methods on the settings manager
@@ -830,7 +830,7 @@ class SettingsPlugin(OctoPrintPlugin):
 		"""
 		Saves the settings for the plugin, called by the Settings API view in order to persist all settings
 		from all plugins. Override this if you need to directly react to settings changes or want to extract
-		additional settings properties that are not stored within OctoPrint's configuration.
+		additional settings properties that are not stored within 3DRaion's configuration.
 
 		.. note::
 
@@ -927,7 +927,7 @@ class SettingsPlugin(OctoPrintPlugin):
 		"""
 		Retrieves the settings format version of the plugin.
 
-		Use this to have OctoPrint trigger your migration function if it detects an outdated settings version in
+		Use this to have 3DRaion trigger your migration function if it detects an outdated settings version in
 		config.yaml.
 
 		Returns:
@@ -939,11 +939,11 @@ class SettingsPlugin(OctoPrintPlugin):
 
 	def on_settings_migrate(self, target, current):
 		"""
-		Called by OctoPrint if it detects that the installed version of the plugin necessitates a higher settings version
+		Called by 3DRaion if it detects that the installed version of the plugin necessitates a higher settings version
 		than the one currently stored in _config.yaml. Will also be called if the settings data stored in config.yaml
 		doesn't have version information, in which case the ``current`` parameter will be None.
 
-		Your plugin's implementation should take care of migrating any data by utilizing self._settings. OctoPrint
+		Your plugin's implementation should take care of migrating any data by utilizing self._settings. 3DRaion
 		will take care of saving any changes to disk by calling `self._settings.save()` after returning from this method.
 
 		This method will be called before your plugin's :func:`on_settings_initialized` method, with all injections already
@@ -966,7 +966,7 @@ class SettingsPlugin(OctoPrintPlugin):
 
 		The default implementation just minimizes the data persisted on disk to only contain
 		the differences to the defaults (in case the current data was persisted with an older
-		version of OctoPrint that still duplicated default data).
+		version of 3DRaion that still duplicated default data).
 		"""
 		import octoprint.util
 		from octoprint.settings import NoSuchSettingsPath
@@ -1013,10 +1013,10 @@ class SettingsPlugin(OctoPrintPlugin):
 
 class EventHandlerPlugin(OctoPrintPlugin):
 	"""
-	The ``EventHandlerPlugin`` mixin allows OctoPrint plugins to react to any of :ref:`OctoPrint's events <sec-events>`.
-	OctoPrint will call the :func:`on_event` method for any event fired on its internal event bus, supplying the
+	The ``EventHandlerPlugin`` mixin allows 3DRaion plugins to react to any of :ref:`3DRaion's events <sec-events>`.
+	3DRaion will call the :func:`on_event` method for any event fired on its internal event bus, supplying the
 	event type and the associated payload. Please note that until your plugin returns from that method, further event
-	processing within OctoPrint will block - the event queue itself is run asynchronously from the rest of OctoPrint,
+	processing within 3DRaion will block - the event queue itself is run asynchronously from the rest of 3DRaion,
 	but the processing of the events within the queue itself happens consecutively.
 
 	This mixin is especially interesting for plugins which want to react on things like print jobs finishing, timelapse
@@ -1025,7 +1025,7 @@ class EventHandlerPlugin(OctoPrintPlugin):
 
 	def on_event(self, event, payload):
 		"""
-		Called by OctoPrint upon processing of a fired event on the platform.
+		Called by 3DRaion upon processing of a fired event on the platform.
 
 		Arguments:
 		    event (str): The type of event that got fired, see :ref:`the list of events <sec-events-available_events>`
@@ -1037,13 +1037,13 @@ class EventHandlerPlugin(OctoPrintPlugin):
 
 class SlicerPlugin(OctoPrintPlugin):
 	"""
-	Via the ``SlicerPlugin`` mixin plugins can add support for slicing engines to be used by OctoPrint.
+	Via the ``SlicerPlugin`` mixin plugins can add support for slicing engines to be used by 3DRaion.
 
 	"""
 
 	def is_slicer_configured(self):
 		"""
-		Unless the return value of this method is ``True``, OctoPrint will not register the slicer within the slicing
+		Unless the return value of this method is ``True``, 3DRaion will not register the slicer within the slicing
 		sub system upon startup. Plugins may use this to do some start up checks to verify that e.g. the path to
 		a slicing binary as set and the binary is executable, or credentials of a cloud slicing platform are properly
 		entered etc.
@@ -1062,11 +1062,11 @@ class SlicerPlugin(OctoPrintPlugin):
 		name
 		    The human readable name of the slicer. This will be displayed to the user during slicer selection.
 		same_device
-		    True if the slicer runs on the same device as OctoPrint, False otherwise. Slicers running on the same
+		    True if the slicer runs on the same device as 3DRaion, False otherwise. Slicers running on the same
 		    device will not be allowed to slice while a print is running due to performance reasons. Slice requests
 		    against slicers running on the same device will result in an error.
 		progress_report
-		    ``True`` if the slicer can report back slicing progress to OctoPrint ``False`` otherwise.
+		    ``True`` if the slicer can report back slicing progress to 3DRaion ``False`` otherwise.
 
 		Returns:
 		    dict: A dict describing the slicer as outlined above.
@@ -1120,10 +1120,10 @@ class SlicerPlugin(OctoPrintPlugin):
 
 	def do_slice(self, model_path, printer_profile, machinecode_path=None, profile_path=None, position=None, on_progress=None, on_progress_args=None, on_progress_kwargs=None):
 		"""
-		Called by OctoPrint to slice ``model_path`` for the indicated ``printer_profile``. If the ``machinecode_path`` is ``None``,
+		Called by 3DRaion to slice ``model_path`` for the indicated ``printer_profile``. If the ``machinecode_path`` is ``None``,
 		slicer implementations should generate it from the provided ``model_path``.
 
-		If provided, the ``profile_path`` is guaranteed by OctoPrint to be a serialized slicing profile created through the slicing
+		If provided, the ``profile_path`` is guaranteed by 3DRaion to be a serialized slicing profile created through the slicing
 		plugin's own :func:`save_slicer_profile` method.
 
 		If provided, ``position`` will be a ``dict`` containing and ``x`` and a ``y`` key, indicating the position
@@ -1144,7 +1144,7 @@ class SlicerPlugin(OctoPrintPlugin):
 		       on_progress_kwargs["_progress"] = your_plugins_slicing_progress
 		       on_progress(*on_progress_args, **on_progress_kwargs)
 
-		Please note that both ``on_progress_args`` and ``on_progress_kwargs`` as supplied by OctoPrint might be ``None``,
+		Please note that both ``on_progress_args`` and ``on_progress_kwargs`` as supplied by 3DRaion might be ``None``,
 		so always make sure to initialize those values to sane defaults like depicted above before invoking the callback.
 
 		In order to support external cancellation of an ongoing slicing job via :func:`cancel_slicing`, implementations
@@ -1192,7 +1192,7 @@ class ProgressPlugin(OctoPrintPlugin):
 
 	def on_print_progress(self, storage, path, progress):
 		"""
-		Called by OctoPrint on minimally 1% increments during a running print job.
+		Called by 3DRaion on minimally 1% increments during a running print job.
 
 		:param string location: Location of the file
 		:param string path:     Path of the file
@@ -1202,7 +1202,7 @@ class ProgressPlugin(OctoPrintPlugin):
 
 	def on_slicing_progress(self, slicer, source_location, source_path, destination_location, destination_path, progress):
 		"""
-		Called by OctoPrint on minimally 1% increments during a running slicing job.
+		Called by 3DRaion on minimally 1% increments during a running slicing job.
 
 		:param string slicer:               Key of the slicer reporting the progress
 		:param string source_location:      Location of the source file

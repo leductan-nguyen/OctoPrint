@@ -1,7 +1,7 @@
 # coding=utf-8
 """
 This module bundles commonly used utility methods or helper classes that are used in multiple places withing
-OctoPrint's source code.
+3DRaion's source code.
 """
 
 __author__ = "Gina Häußge <osd@foosel.net>"

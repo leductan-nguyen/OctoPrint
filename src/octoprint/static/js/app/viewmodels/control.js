@@ -5,7 +5,7 @@ $(function() {
         self.loginState = parameters[0];
         self.settings = parameters[1];
 
-        // TODO remove with release of 1.3.0 and switch to OctoPrint.coreui usage
+        // TODO remove with release of 1.3.0 and switch to 3DRaion.coreui usage
         self.tabTracking = parameters[2];
 
         self._createToolEntry = function () {

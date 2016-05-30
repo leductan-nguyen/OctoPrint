@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 """
 The SSDP/UPNP implementations has been largely inspired by https://gist.github.com/schlamar/2428250
@@ -25,7 +25,7 @@ except:
 __plugin_name__ = "Discovery"
 __plugin_author__ = "Gina Häußge"
 __plugin_url__ = "https://github.com/foosel/OctoPrint/wiki/Plugin:-Discovery"
-__plugin_description__ = "Makes the OctoPrint instance discoverable via Bonjour/Avahi/Zeroconf and uPnP"
+__plugin_description__ = "Makes the 3DRaion instance discoverable via Bonjour/Avahi/Zeroconf and uPnP"
 __plugin_license__ = "AGPLv3"
 
 def __plugin_load__():
@@ -108,7 +108,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 		vendor = self._settings.get(["model", "vendor"])
 		vendorUrl = self._settings.get(["model", "vendorUrl"])
 		if not vendor:
-			vendor = "The OctoPrint Project"
+			vendor = "The 3DRaion Project"
 			vendorUrl = "http://www.octoprint.org/"
 
 		response = flask.make_response(flask.render_template("discovery.xml.jinja2",
@@ -128,7 +128,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 	def is_blueprint_protected(self):
 		return False
 
-	##~~ StartupPlugin API -- used for registering OctoPrint's Zeroconf and SSDP services upon application startup
+	##~~ StartupPlugin API -- used for registering 3DRaion's Zeroconf and SSDP services upon application startup
 
 	def on_startup(self, host, port):
 		public_host = self._settings.get(["publicHost"])
@@ -156,7 +156,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 		# SSDP
 		self._ssdp_register()
 
-	##~~ ShutdownPlugin API -- used for unregistering OctoPrint's Zeroconf and SSDP service upon application shutdown
+	##~~ ShutdownPlugin API -- used for unregistering 3DRaion's Zeroconf and SSDP service upon application shutdown
 
 	def on_shutdown(self):
 		for key in self._sd_refs:
@@ -174,8 +174,8 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 		Registers a new service with Zeroconf/Bonjour/Avahi.
 
 		:param reg_type: type of service to register, e.g. "_gntp._tcp"
-		:param name: displayable name of the service, if not given defaults to the OctoPrint instance name
-		:param port: port to register for the service, if not given defaults to OctoPrint's (public) port
+		:param name: displayable name of the service, if not given defaults to the 3DRaion instance name
+		:param port: port to register for the service, if not given defaults to 3DRaion's (public) port
 		:param txt_record: optional txt record to attach to the service, dictionary of key-value-pairs
 		"""
 
@@ -204,7 +204,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 		Unregisteres a previously registered Zeroconf/Bonjour/Avahi service identified by service and port.
 
 		:param reg_type: the type of the service to be unregistered
-		:param port: the port of the service to be unregistered, defaults to OctoPrint's (public) port if not given
+		:param port: the port of the service to be unregistered, defaults to 3DRaion's (public) port if not given
 		:return:
 		"""
 
@@ -454,7 +454,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 
 	def _create_http_txt_record_dict(self):
 		"""
-		Creates a TXT record for the _http._tcp Zeroconf service supplied by this OctoPrint instance.
+		Creates a TXT record for the _http._tcp Zeroconf service supplied by this 3DRaion instance.
 
 		Defines the keys for _http._tcp as defined in http://www.dns-sd.org/txtrecords.html
 
@@ -485,17 +485,17 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 
 	def _create_octoprint_txt_record_dict(self):
 		"""
-		Creates a TXT record for the _octoprint._tcp Zeroconf service supplied by this OctoPrint instance.
+		Creates a TXT record for the _octoprint._tcp Zeroconf service supplied by this 3DRaion instance.
 
 		The following keys are defined:
 
-		  * `path`: path prefix to actual OctoPrint instance, inherited from _http._tcp
+		  * `path`: path prefix to actual 3DRaion instance, inherited from _http._tcp
 		  * `u`: username if HTTP Basic Auth is used, optional, inherited from _http._tcp
 		  * `p`: password if HTTP Basic Auth is used, optional, inherited from _http._tcp
-		  * `version`: OctoPrint software version
-		  * `api`: OctoPrint API version
-		  * `model`: Model of the device that is running OctoPrint
-		  * `vendor`: Vendor of the device that is running OctoPrint
+		  * `version`: 3DRaion software version
+		  * `api`: 3DRaion API version
+		  * `model`: Model of the device that is running 3DRaion
+		  * `vendor`: Vendor of the device that is running 3DRaion
 
 		:return: a dictionary containing the defined key-value-pairs, ready to be turned into a TXT record
 		"""
@@ -523,7 +523,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 
 	def _ssdp_register(self):
 		"""
-		Registers the OctoPrint instance as basic service with a presentation URL pointing to the web interface
+		Registers the 3DRaion instance as basic service with a presentation URL pointing to the web interface
 		"""
 
 		import threading
@@ -536,7 +536,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 
 	def _ssdp_unregister(self):
 		"""
-		Unregisters the OctoPrint instance again
+		Unregisters the 3DRaion instance again
 		"""
 
 		self._ssdp_monitor_active = False
@@ -677,7 +677,7 @@ class DiscoveryPlugin(octoprint.plugin.StartupPlugin,
 	def get_instance_name(self):
 		name = self._settings.global_get(["appearance", "name"])
 		if name:
-			return u"OctoPrint instance \"{}\"".format(name)
+			return u"3DRaion instance \"{}\"".format(name)
 		else:
 			import socket
-			return u"OctoPrint instance on {}".format(socket.gethostname())
+			return u"3DRaion instance on {}".format(socket.gethostname())

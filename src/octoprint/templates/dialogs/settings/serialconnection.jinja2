@@ -1,17 +1,17 @@
 <form class="form-horizontal">
-    <div class="control-group" title="{{ _('Serial port to connect to, setting this to AUTO will make OctoPrint try to automatically find the right setting') }}">
+    <div class="control-group" title="{{ _('Serial port to connect to, setting this to AUTO will make 3DRaion try to automatically find the right setting') }}">
         <label class="control-label" for="settings-serialPort">{{ _('Serial Port') }}</label>
         <div class="controls">
             <select id="settings-serialPort" data-bind="options: serial_portOptions, optionsCaption: 'AUTO', value: serial_port"></select>
         </div>
     </div>
-    <div class="control-group" title="{{ _('Serial baud rate to connect with, setting this to AUTO will make OctoPrint try to automatically find the right setting') }}">
+    <div class="control-group" title="{{ _('Serial baud rate to connect with, setting this to AUTO will make 3DRaion try to automatically find the right setting') }}">
         <label class="control-label" for="settings-baudrate">{{ _('Baudrate') }}</label>
         <div class="controls">
             <select id="settings-baudrate" data-bind="options: serial_baudrateOptions, optionsCaption: 'AUTO', value: serial_baudrate"></select>
         </div>
     </div>
-    <div class="control-group" title="{{ _('Makes OctoPrint try to connect to the printer automatically during start up') }}">
+    <div class="control-group" title="{{ _('Makes 3DRaion try to connect to the printer automatically during start up') }}">
         <div class="controls">
             <label class="checkbox">
                 <input type="checkbox" data-bind="checked: serial_autoconnect" id="settings-serialAutoconnect"> {{ _('Auto-connect to printer on server start') }}

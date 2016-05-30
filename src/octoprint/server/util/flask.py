@@ -4,7 +4,7 @@ from flask import make_response
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 import tornado.web
 import flask
@@ -681,11 +681,11 @@ def redirect_to_tornado(request, target, code=302):
 def restricted_access(func):
 	"""
 	If you decorate a view with this, it will ensure that first setup has been
-	done for OctoPrint's Access Control plus that any conditions of the
+	done for 3DRaion's Access Control plus that any conditions of the
 	login_required decorator are met. It also allows to login using the masterkey or any
 	of the user's apikeys if API access is enabled globally and for the decorated view.
 
-	If OctoPrint's Access Control has not been setup yet (indicated by the "firstRun"
+	If 3DRaion's Access Control has not been setup yet (indicated by the "firstRun"
 	flag from the settings being set to True and the userManager not indicating
 	that it's user database has been customized from default), the decorator
 	will cause a HTTP 403 status code to be returned by the decorated resource.
@@ -699,9 +699,9 @@ def restricted_access(func):
 	"""
 	@functools.wraps(func)
 	def decorated_view(*args, **kwargs):
-		# if OctoPrint hasn't been set up yet, abort
+		# if 3DRaion hasn't been set up yet, abort
 		if settings().getBoolean(["server", "firstRun"]) and settings().getBoolean(["accessControl", "enabled"]) and (octoprint.server.userManager is None or not octoprint.server.userManager.hasBeenCustomized()):
-			return flask.make_response("OctoPrint isn't setup yet", 403)
+			return flask.make_response("3DRaion isn't setup yet", 403)
 
 		apikey = octoprint.server.util.get_api_key(flask.request)
 		if apikey == octoprint.server.UI_API_KEY:

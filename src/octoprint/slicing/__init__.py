@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-In this module the slicing support of OctoPrint is encapsulated.
+In this module the slicing support of 3DRaion is encapsulated.
 
 .. autoclass:: SlicingProfile
    :members:
@@ -16,7 +16,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 
 import os

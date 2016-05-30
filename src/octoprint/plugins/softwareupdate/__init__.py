@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 
 import octoprint.plugin
@@ -106,13 +106,13 @@ class SoftwareUpdatePlugin(octoprint.plugin.BlueprintPlugin,
 				if "__version" in data:
 					data_version = data["__version"]
 				else:
-					self._logger.info("Can't determine version of OctoPrint version cache was created for, not using it")
+					self._logger.info("Can't determine version of 3DRaion version cache was created for, not using it")
 					return
 
 				from octoprint._version import get_versions
 				octoprint_version = get_versions()["version"]
 				if data_version != octoprint_version:
-					self._logger.info("Version cache was created for another version of OctoPrint, not using it")
+					self._logger.info("Version cache was created for another version of 3DRaion, not using it")
 					return
 
 				self._version_cache = data
@@ -757,7 +757,7 @@ class SoftwareUpdatePlugin(octoprint.plugin.BlueprintPlugin,
 __plugin_name__ = "Software Update"
 __plugin_author__ = "Gina Häußge"
 __plugin_url__ = "https://github.com/foosel/OctoPrint/wiki/Plugin:-Software-Update"
-__plugin_description__ = "Allows receiving update notifications and performing updates of OctoPrint and plugins"
+__plugin_description__ = "Allows receiving update notifications and performing updates of 3DRaion and plugins"
 __plugin_license__ = "AGPLv3"
 def __plugin_load__():
 	global __plugin_implementation__

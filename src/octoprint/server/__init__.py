@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 import uuid
 from sockjs.tornado import SockJSRouter
@@ -179,7 +179,7 @@ class Server(object):
 		def exception_logger(exc_type, exc_value, exc_tb):
 			self._logger.error("Uncaught exception", exc_info=(exc_type, exc_value, exc_tb))
 		sys.excepthook = exception_logger
-		self._logger.info("Starting OctoPrint %s" % DISPLAY_VERSION)
+		self._logger.info("Starting 3DRaion %s" % DISPLAY_VERSION)
 
 		# start the intermediary server
 		self._start_intermediary_server(s)
@@ -516,12 +516,12 @@ class Server(object):
 		signal.signal(signal.SIGTERM, sigterm_handler)
 
 		try:
-			# this is the main loop - as long as tornado is running, OctoPrint is running
+			# this is the main loop - as long as tornado is running, 3DRaion is running
 			ioloop.start()
 		except (KeyboardInterrupt, SystemExit):
 			pass
 		except:
-			self._logger.fatal("Now that is embarrassing... Something really really went wrong here. Please report this including the stacktrace below in OctoPrint's bugtracker. Thanks!")
+			self._logger.fatal("Now that is embarrassing... Something really really went wrong here. Please report this including the stacktrace below in 3DRaion's bugtracker. Thanks!")
 			self._logger.exception("Stacktrace follows:")
 
 	def _create_socket_connection(self, session):
@@ -530,7 +530,7 @@ class Server(object):
 
 	def _check_for_root(self):
 		if "geteuid" in dir(os) and os.geteuid() == 0:
-			exit("You should not run OctoPrint as root!")
+			exit("You should not run 3DRaion as root!")
 
 	def _get_locale(self):
 		global LANGUAGES

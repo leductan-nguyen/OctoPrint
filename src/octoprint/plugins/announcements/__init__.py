@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2016 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2016 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 
 import octoprint.plugin
@@ -45,16 +45,16 @@ class AnnouncementPlugin(octoprint.plugin.AssetPlugin,
 
 	def get_settings_defaults(self):
 		'''
-		return dict(channels=dict(_important=dict(name="Important OctoPrint Announcements",
+		return dict(channels=dict(_important=dict(name="Important 3DRaion Announcements",
 		                                          priority=1,
 		                                          type="rss",
 		                                          url="http://octoprint.org/feeds/important.xml",
 		                                          read_until=1449446400),
-		                          _releases=dict(name="OctoPrint Release Announcements",
+		                          _releases=dict(name="3DRaion Release Announcements",
 		                                         priority=2,
 		                                         type="rss",
 		                                         url="http://octoprint.org/feeds/releases.xml"),
-		                          _spotlight=dict(name="OctoPrint Community Spotlights",
+		                          _spotlight=dict(name="3DRaion Community Spotlights",
 		                                          priority=2,
 		                                          type="rss",
 		                                          url="http://octoprint.org/feeds/spotlight.xml"),

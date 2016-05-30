@@ -356,7 +356,7 @@ function DataUpdater(allViewModels) {
                     } else if (type == "Error") {
                         new PNotify({
                                 title: gettext("Unhandled communication error"),
-                                text: _.sprintf(gettext("The was an unhandled error while talking to the printer. Due to that OctoPrint disconnected. Error: %(error)s"), payload),
+                                text: _.sprintf(gettext("The was an unhandled error while talking to the printer. Due to that 3DRaion disconnected. Error: %(error)s"), payload),
                                 type: "error",
                                 hide: false
                         });

@@ -421,7 +421,7 @@ $(function() {
                     console.log(JSON.stringify(messageData));
 
                     var restartType = messageData.restart_type;
-                    var text = gettext("The update finished successfully, please restart OctoPrint now.");
+                    var text = gettext("The update finished successfully, please restart 3DRaion now.");
                     if (restartType == "environment") {
                         text = gettext("The update finished successfully, please reboot the server now.");
                     }
@@ -440,7 +440,7 @@ $(function() {
                 }
                 case "restart_failed": {
                     var restartType = messageData.restart_type;
-                    var text = gettext("Restarting OctoPrint failed, please restart it manually. You might also want to consult the log file on what went wrong here.");
+                    var text = gettext("Restarting 3DRaion failed, please restart it manually. You might also want to consult the log file on what went wrong here.");
                     if (restartType == "environment") {
                         text = gettext("Rebooting the server failed, please reboot it manually. You might also want to consult the log file on what went wrong here.");
                     }

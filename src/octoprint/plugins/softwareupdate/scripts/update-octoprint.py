@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Haeussge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 
 import errno
@@ -147,7 +147,7 @@ def parse_arguments():
 	parser.add_argument("--user", action="store_true", dest="user",
 	                    help="Install to the user site directory instead of the general site directory")
 	parser.add_argument("folder", type=str,
-	                    help="Specify the base folder of the OctoPrint installation to update")
+	                    help="Specify the base folder of the 3DRaion installation to update")
 	parser.add_argument("target", type=str,
 	                    help="Specify the commit or tag to which to update")
 

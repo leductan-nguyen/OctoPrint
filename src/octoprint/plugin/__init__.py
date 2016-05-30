@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-This module represents OctoPrint's plugin subsystem. This includes management and helper methods as well as the
+This module represents 3DRaion's plugin subsystem. This includes management and helper methods as well as the
 registered plugin types.
 
 .. autofunction:: plugin_manager
@@ -17,7 +17,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The OctoPrint Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
 
 import os
 import logging
@@ -56,7 +56,7 @@ def plugin_manager(init=False, plugin_folders=None, plugin_types=None, plugin_en
 	        False.
 	    plugin_folders (list): A list of folders (as strings containing the absolute path to them) in which to look for
 	        potential plugin modules. If not provided this defaults to the configured ``plugins`` base folder and
-	        ``src/plugins`` within OctoPrint's code base.
+	        ``src/plugins`` within 3DRaion's code base.
 	    plugin_types (list): A list of recognized plugin types for which to look for provided implementations. If not
 	        provided this defaults to the plugin types found in :mod:`octoprint.plugin.types` without
 	        :class:`~octoprint.plugin.OctoPrintPlugin`.

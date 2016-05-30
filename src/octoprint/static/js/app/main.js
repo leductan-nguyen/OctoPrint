@@ -8,7 +8,7 @@ $(function() {
         log.setLevel(CONFIG_DEBUG ? "debug" : "info");
 
         //~~ setup browser and internal tab tracking (in 1.3.0 that will be
-        //   much nicer with the global OctoPrint object...)
+        //   much nicer with the global 3DRaion object...)
 
         var tabTracking = (function() {
             var exports = {
@@ -134,7 +134,7 @@ $(function() {
         var viewModelMap = {};
 
         // We put our tabTracking into the viewModelMap as a workaround until
-        // our global OctoPrint object becomes available in 1.3.0. This way
+        // our global 3DRaion object becomes available in 1.3.0. This way
         // we'll still be able to access it in our view models.
         //
         // NOTE TO DEVELOPERS: Do NOT depend on this dependency in your custom
@@ -474,7 +474,7 @@ $(function() {
 
         // Allow components to react to tab change
         var onTabChange = function(current, previous) {
-            log.debug("Selected OctoPrint tab changed: previous = " + previous + ", current = " + current);
+            log.debug("Selected 3DRaion tab changed: previous = " + previous + ", current = " + current);
             tabTracking.selectedTab = current;
 
             _.each(allViewModels, function(viewModel) {
