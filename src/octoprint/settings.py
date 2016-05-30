@@ -148,7 +148,7 @@ default_settings = {
 		"cleanTmpAfterDays": 7
 	},
 	"gcodeViewer": {
-		"enabled": True,
+		"enabled": False,
 		"mobileSizeThreshold": 2 * 1024 * 1024, # 2MB
 		"sizeThreshold": 20 * 1024 * 1024, # 20MB
 	},
@@ -167,7 +167,7 @@ default_settings = {
 		"repetierTargetTemp": False,
 		"externalHeatupDetection": True,
 		"supportWait": True,
-		"keyboardControl": True,
+		"keyboardControl": False,
 		"pollWatched": False,
 		"ignoreIdenticalResends": False,
 		"identicalResendsCountdown": 7
@@ -189,8 +189,8 @@ default_settings = {
 	},
 	"temperature": {
 		"profiles": [
-			{"name": "ABS", "extruder" : 210, "bed" : 100 },
-			{"name": "PLA", "extruder" : 180, "bed" : 60 }
+			{"name": "ABS", "extruder" : 250, "bed" : 75 },
+			{"name": "PLA", "extruder" : 200, "bed" : 55 }
 		],
 		"cutoff": 30
 	},
@@ -236,7 +236,7 @@ default_settings = {
 		"actions": []
 	},
 	"accessControl": {
-		"enabled": True,
+		"enabled": False,
 		"salt": None,
 		"userManager": "octoprint.users.FilebasedUserManager",
 		"userfile": None,
