@@ -99,7 +99,7 @@ default_settings = {
 	"server": {
 		"host": "0.0.0.0",
 		"port": 5000,
-		"firstRun": False,
+		"firstRun": False, #tan
 		"secretKey": None,
 		"reverseProxy": {
 			"prefixHeader": "X-Script-Name",
@@ -148,7 +148,7 @@ default_settings = {
 		"cleanTmpAfterDays": 7
 	},
 	"gcodeViewer": {
-		"enabled": False,
+		"enabled": False, #tan
 		"mobileSizeThreshold": 2 * 1024 * 1024, # 2MB
 		"sizeThreshold": 20 * 1024 * 1024, # 20MB
 	},
@@ -189,8 +189,8 @@ default_settings = {
 	},
 	"temperature": {
 		"profiles": [
-			{"name": "ABS", "extruder" : 250, "bed" : 75 },
-			{"name": "PLA", "extruder" : 200, "bed" : 55 }
+			{"name": "ABS", "extruder" : 250, "bed" : 75 }, #tan
+			{"name": "PLA", "extruder" : 200, "bed" : 55 } #tan
 		],
 		"cutoff": 30
 	},
@@ -209,13 +209,15 @@ default_settings = {
 		"defaultLanguage": "_default",
 		"components": {
 			"order": {
-				"navbar": ["settings", "systemmenu", "login", "plugin_announcements"],
+				#"navbar": ["settings", "systemmenu", "login", "plugin_announcements"], #tan
+				"navbar": ["settings", "systemmenu", "login"],
 				"sidebar": ["connection", "state", "files"],
 				"tab": ["temperature", "control", "gcodeviewer", "terminal", "timelapse"],
 				"settings": [
 					"section_printer", "serial", "printerprofiles", "temperatures", "terminalfilters", "gcodescripts",
 					"section_features", "features", "webcam", "accesscontrol", "api",
-					"section_octoprint", "server", "folders", "appearance", "logs", "plugin_pluginmanager", "plugin_softwareupdate", "plugin_announcements"
+					#"section_octoprint", "server", "folders", "appearance", "logs", "plugin_pluginmanager", "plugin_softwareupdate", "plugin_announcements" #tan
+					"section_octoprint", "server", "folders", "appearance", "logs", "plugin_pluginmanager", "plugin_softwareupdate"
 				],
 				"usersettings": ["access", "interface"],
 				"about": ["about", "supporters", "authors", "changelog", "license", "thirdparty", "plugin_pluginmanager"],
@@ -236,7 +238,7 @@ default_settings = {
 		"actions": []
 	},
 	"accessControl": {
-		"enabled": False,
+		"enabled": False, #tan
 		"salt": None,
 		"userManager": "octoprint.users.FilebasedUserManager",
 		"userfile": None,
