@@ -247,12 +247,12 @@ default_settings = {
 		"autologinAs": None
 	},
 	"slicing": {
-		"enabled": True,
+		"enabled": False, #tan
 		"defaultSlicer": "cura",
 		"defaultProfiles": None
 	},
 	"events": {
-		"enabled": True,
+		"enabled": False, #tan
 		"subscriptions": []
 	},
 	"api": {
@@ -266,7 +266,7 @@ default_settings = {
 		{ "name": "Suppress M27 requests/responses", "regex": "(Send: M27)|(Recv: SD printing byte)" }
 	],
 	"plugins": {
-		"_disabled": []
+		"_disabled": ["plugin_announcements"]
 	},
 	"scripts": {
 		"gcode": {
