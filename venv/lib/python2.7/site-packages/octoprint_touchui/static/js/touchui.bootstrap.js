@@ -1,0 +1,1 @@
+!function(){var E=new TouchUI;E.domLoading(),$(function(){E.domReady(),OCTOPRINT_VIEWMODELS.push([E.koStartup,E.TOUCHUI_REQUIRED_VIEWMODELS,E.TOUCHUI_ELEMENTS,E.TOUCHUI_REQUIRED_VIEWMODELS])})}();
