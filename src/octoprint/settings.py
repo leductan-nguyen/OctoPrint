@@ -228,7 +228,7 @@ default_settings = {
 				"sidebar": [],
 				"tab": ["gcodeviewer"], #tan
 				"settings": [
-					"section_printer", "gcodescripts", #tan
+					"section_printer", "terminalfilters", "gcodescripts", #tan
 					"section_features", "feature", "api", #tan
 					"section_octoprint", "logs", "plugin_pluginmanager", "plugin_softwareupdate", "plugin_announcements" #tan
 				],
