@@ -32,7 +32,7 @@ import uuid
 
 from octoprint.util import atomic_write, is_hidden_path
 
-_APPNAME = "3DRaion" #tan
+_APPNAME = "raionpi" #tan
 
 _instance = None
 
