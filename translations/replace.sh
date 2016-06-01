@@ -1,1 +1,1 @@
-for i in *.pot; do sed -i 's/OctoPrint/3DRaion/g' "$i"; done
+for i in *.pot; do sed -i 's/OctoPrint/RaionPi/g' "$i"; done

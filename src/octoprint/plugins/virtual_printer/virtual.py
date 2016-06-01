@@ -195,7 +195,7 @@ class VirtualPrinter():
 
 			if data.strip() == "version":
 				from octoprint._version import get_versions
-				self.outgoing.put("3DRaion VirtualPrinter v" + get_versions()["version"])
+				self.outgoing.put("RaionPi VirtualPrinter v" + get_versions()["version"])
 				continue
 			elif data.startswith("!!DEBUG:"):
 				self._debugTrigger(data[len("!!DEBUG:"):].strip())

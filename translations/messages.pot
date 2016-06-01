@@ -1,12 +1,12 @@
-# Translations template for 3DRaion.
-# Copyright (C) 2016 The 3DRaion Project
-# This file is distributed under the same license as the 3DRaion project.
+# Translations template for RaionPi.
+# Copyright (C) 2016 The RaionPi Project
+# This file is distributed under the same license as the RaionPi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 3DRaion 1.2.11.dev32+g76959e0.dirty\n"
+"Project-Id-Version: RaionPi 1.2.11.dev32+g76959e0.dirty\n"
 "Report-Msgid-Bugs-To: i18n@octoprint.org\n"
 "POT-Creation-Date: 2016-05-04 13:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -308,7 +308,7 @@ msgstr ""
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:613
 msgid ""
 "A plugin was installed successfully, however it was impossible to detect "
-"which one. Please Restart 3DRaion to make sure everything will be "
+"which one. Please Restart RaionPi to make sure everything will be "
 "registered properly"
 msgstr ""
 
@@ -323,7 +323,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:619
 msgid ""
-"The plugin was reinstalled successfully, however a restart of 3DRaion "
+"The plugin was reinstalled successfully, however a restart of RaionPi "
 "is needed for that to take effect."
 msgstr ""
 
@@ -344,7 +344,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:624
 msgid ""
-"The plugin was installed successfully, however a restart of 3DRaion is "
+"The plugin was installed successfully, however a restart of RaionPi is "
 "needed for that to take effect."
 msgstr ""
 
@@ -389,7 +389,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:655
 msgid ""
-"The plugin was uninstalled successfully, however a restart of 3DRaion "
+"The plugin was uninstalled successfully, however a restart of RaionPi "
 "is needed for that to take effect."
 msgstr ""
 
@@ -419,7 +419,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:672
 msgid ""
-"The plugin was enabled successfully, however a restart of 3DRaion is "
+"The plugin was enabled successfully, however a restart of RaionPi is "
 "needed for that to take effect."
 msgstr ""
 
@@ -451,7 +451,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/static/js/pluginmanager.js:689
 msgid ""
-"The plugin was disabled successfully, however a restart of 3DRaion is "
+"The plugin was disabled successfully, however a restart of RaionPi is "
 "needed for that to take effect."
 msgstr ""
 
@@ -483,8 +483,8 @@ msgid ""
 "This\n"
 "    is <strong>not</strong> recommended due to security reasons. It is "
 "<strong>strongly</strong>\n"
-"    suggested you install 3DRaion under a\n"
-"    <a href=\"https://github.com/foosel/3DRaion/#installation\">user-"
+"    suggested you install RaionPi under a\n"
+"    <a href=\"https://github.com/foosel/RaionPi/#installation\">user-"
 "owned virtual environment</a>\n"
 "    so that the use of <code>sudo</code> is not needed for plugin "
 "management.\n"
@@ -570,7 +570,7 @@ msgid "Sadly the repository is currently not available"
 msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/templates/pluginmanager_settings.jinja2:148
-msgid "Is your 3DRaion installation connected to the internet?"
+msgid "Is your RaionPi installation connected to the internet?"
 msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/templates/pluginmanager_settings.jinja2:153
@@ -623,7 +623,7 @@ msgstr ""
 
 #: src/octoprint/plugins/pluginmanager/templates/pluginmanager_settings.jinja2:212
 msgid ""
-"<strong>Only</strong> set this if 3DRaion cannot autodetect the path to"
+"<strong>Only</strong> set this if RaionPi cannot autodetect the path to"
 " <code>pip</code> to use for managing plugins."
 msgstr ""
 
@@ -684,7 +684,7 @@ msgstr ""
 #: src/octoprint/static/js/app/viewmodels/appearance.js:18
 #: src/octoprint/static/js/app/viewmodels/appearance.js:20
 #: src/octoprint/templates/dialogs/about/about.jinja2:1
-msgid "3DRaion"
+msgid "RaionPi"
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:29
@@ -795,7 +795,7 @@ msgid ""
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:424
-msgid "The update finished successfully, please restart 3DRaion now."
+msgid "The update finished successfully, please restart RaionPi now."
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:426
@@ -808,7 +808,7 @@ msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/static/js/softwareupdate.js:443
 msgid ""
-"Restarting 3DRaion failed, please restart it manually. You might also "
+"Restarting RaionPi failed, please restart it manually. You might also "
 "want to consult the log file on what went wrong here."
 msgstr ""
 
@@ -847,7 +847,7 @@ msgstr ""
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate.jinja2:19
 msgid ""
 "Be sure to read through any linked release notes, especially those for "
-"3DRaion since they might contain important information you need to know"
+"RaionPi since they might contain important information you need to know"
 " <strong>before</strong> upgrading."
 msgstr ""
 
@@ -864,12 +864,12 @@ msgstr ""
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:1
 msgid ""
 "\n"
-"    Please configure the <strong>checkout folder</strong> of 3DRaion, "
+"    Please configure the <strong>checkout folder</strong> of RaionPi, "
 "otherwise\n"
 "    this plugin won't be able to update it. Click on the <i class=\"icon-"
 "wrench\"></i> button\n"
 "    to do this. Also refer to the <a "
-"href=\"https://github.com/foosel/3DRaion/wiki/Plugin:-Software-Update\""
+"href=\"https://github.com/foosel/RaionPi/wiki/Plugin:-Software-Update\""
 " target=\"_blank\">Documentation</a>.\n"
 msgstr ""
 
@@ -877,18 +877,18 @@ msgstr ""
 msgid ""
 "\n"
 "    <p>\n"
-"        <strong>You are running a non-release version of 3DRaion but "
-"are tracking 3DRaion\n"
+"        <strong>You are running a non-release version of RaionPi but "
+"are tracking RaionPi\n"
 "        releases.</strong>\n"
 "    </p><p>\n"
-"        You probably want 3DRaion to track the matching development "
+"        You probably want RaionPi to track the matching development "
 "version instead.\n"
-"        If you have a local 3DRaion checkout folder switched to another"
+"        If you have a local RaionPi checkout folder switched to another"
 " branch,\n"
 "        <strong>simply switching over to \"Commit\" tracking</strong> "
 "will already\n"
 "        take care of that. Otherwise please take a look at the\n"
-"        <a href=\"https://github.com/foosel/3DRaion/wiki/Plugin"
+"        <a href=\"https://github.com/foosel/RaionPi/wiki/Plugin"
 ":-Software-Update\" target=\"_blank\">Documentation</a>.\n"
 "    </p>\n"
 msgstr ""
@@ -930,11 +930,11 @@ msgid "Force update now (even if no new versions are available)"
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:78
-msgid "3DRaion checkout folder"
+msgid "RaionPi checkout folder"
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:84
-msgid "3DRaion version tracking"
+msgid "RaionPi version tracking"
 msgstr ""
 
 #: src/octoprint/plugins/softwareupdate/templates/softwareupdate_settings.jinja2:90
@@ -1188,7 +1188,7 @@ msgstr ""
 #, python-format
 msgid ""
 "The was an unhandled error while talking to the printer. Due to that "
-"3DRaion disconnected. Error: %(error)s"
+"RaionPi disconnected. Error: %(error)s"
 msgstr ""
 
 #: src/octoprint/static/js/app/helpers.js:372
@@ -1321,7 +1321,7 @@ msgstr ""
 
 #: src/octoprint/static/js/app/viewmodels/firstrun.js:38
 msgid ""
-"If you disable Access Control <strong>and</strong> your 3DRaion "
+"If you disable Access Control <strong>and</strong> your RaionPi "
 "installation is accessible from the internet, your printer <strong>will "
 "be accessible by everyone - that also includes the bad guys!</strong>"
 msgstr ""
@@ -1681,7 +1681,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/about.jinja2:4
 #: src/octoprint/templates/dialogs/settings.jinja2:51
-msgid "About 3DRaion"
+msgid "About RaionPi"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/confirmation.jinja2:4
@@ -1699,7 +1699,7 @@ msgid ""
 "your printer's health!</strong>\n"
 "        </p>\n"
 "            <p>\n"
-"                3DRaion by default now ships with Access Control "
+"                RaionPi by default now ships with Access Control "
 "enabled, meaning you won't be able to do anything with the\n"
 "                printer unless you login first as a configured user. This"
 " is to <strong>prevent strangers - possibly with\n"
@@ -1712,7 +1712,7 @@ msgid ""
 "                It looks like you haven't configured access control yet. "
 "Please <strong>set up an username and password</strong> for the\n"
 "                initial administrator account who will have full access "
-"to both the printer and 3DRaion's settings, then click\n"
+"to both the printer and RaionPi's settings, then click\n"
 "                on \"Keep Access Control Enabled\":\n"
 "            </p>"
 msgstr ""
@@ -1746,7 +1746,7 @@ msgstr ""
 #: src/octoprint/templates/dialogs/firstrun.jinja2:41
 msgid ""
 "<p>\n"
-"            <strong>Note:</strong> In case that your 3DRaion "
+"            <strong>Note:</strong> In case that your RaionPi "
 "installation is only accessible from within a trustworthy network and you"
 " don't\n"
 "            need Access Control for other reasons, you may alternatively "
@@ -1769,7 +1769,7 @@ msgid "Keep Access Control Enabled"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings.jinja2:4
-msgid "3DRaion Settings"
+msgid "RaionPi Settings"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/slicing.jinja2:8
@@ -1922,7 +1922,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/appearance.jinja2:2
 msgid ""
-"Name of this 3DRaion instance, will be shown in the navigation bar and "
+"Name of this RaionPi instance, will be shown in the navigation bar and "
 "broadcast on the network"
 msgstr ""
 
@@ -2093,7 +2093,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/folders.jinja2:44
 msgid ""
-"If the free disk space falls below these thresholds, 3DRaion will warn "
+"If the free disk space falls below these thresholds, RaionPi will warn "
 "the user."
 msgstr ""
 
@@ -2239,7 +2239,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:2
 msgid ""
-"Serial port to connect to, setting this to AUTO will make 3DRaion try "
+"Serial port to connect to, setting this to AUTO will make RaionPi try "
 "to automatically find the right setting"
 msgstr ""
 
@@ -2251,7 +2251,7 @@ msgstr ""
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:8
 msgid ""
 "Serial baud rate to connect with, setting this to AUTO will make "
-"3DRaion try to automatically find the right setting"
+"RaionPi try to automatically find the right setting"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:9
@@ -2261,7 +2261,7 @@ msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/serialconnection.jinja2:14
 msgid ""
-"Makes 3DRaion try to connect to the printer automatically during start "
+"Makes RaionPi try to connect to the printer automatically during start "
 "up"
 msgstr ""
 
@@ -2416,15 +2416,15 @@ msgid "Commands"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:4
-msgid "Command to restart the 3DRaion server"
+msgid "Command to restart the RaionPi server"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:5
-msgid "Restart 3DRaion"
+msgid "Restart RaionPi"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:10
-msgid "Command to restart the system 3DRaion is running on"
+msgid "Command to restart the system RaionPi is running on"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:11
@@ -2432,7 +2432,7 @@ msgid "Restart system"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:16
-msgid "Command to shut down the system 3DRaion is running on"
+msgid "Command to shut down the system RaionPi is running on"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/server.jinja2:17
@@ -2448,7 +2448,7 @@ msgid "Graph cutoff"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/temperatures.jinja2:10
-msgid "Needs a restart of 3DRaion to become active."
+msgid "Needs a restart of RaionPi to become active."
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/temperatures.jinja2:13
@@ -2504,7 +2504,7 @@ msgid "FFMPEG threads"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/webcam.jinja2:35
-msgid "Enable 3DRaion watermark in timelapse movies"
+msgid "Enable RaionPi watermark in timelapse movies"
 msgstr ""
 
 #: src/octoprint/templates/dialogs/settings/webcam.jinja2:42
@@ -2914,7 +2914,7 @@ msgstr ""
 #: src/octoprint/templates/tabs/terminal.jinja2:31
 msgid ""
 "If acknowledgements (\"ok\"s) sent by the firmware get lost due to issues"
-" with the serial communication to your printer, 3DRaion's communication"
+" with the serial communication to your printer, RaionPi's communication"
 " with it can become stuck. If that happens, this can help. Please be "
 "advised that such occurences hint at general communication issues with "
 "your printer which will probably negatively influence your printing "
@@ -2931,7 +2931,7 @@ msgstr ""
 
 #: src/octoprint/templates/tabs/terminal.jinja2:36
 msgid ""
-"Some functionality of the terminal will be disabled if 3DRaion detects "
+"Some functionality of the terminal will be disabled if RaionPi detects "
 "that your browser is too slow for that. You may force it back on here, "
 "but be aware that this might make your browser unresponsive."
 msgstr ""

@@ -19,7 +19,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 import re
 
@@ -99,7 +99,7 @@ class PrinterInterface(object):
 
 	def fake_ack(self):
 		"""
-		Fakes an acknowledgement for the communication layer. If the communication between 3DRaion and the printer
+		Fakes an acknowledgement for the communication layer. If the communication between RaionPi and the printer
 		gets stuck due to lost "ok" responses from the server due to communication issues, this can be used to get
 		things going again.
 		"""

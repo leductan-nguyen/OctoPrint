@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-This module represents 3DRaion's settings management. Within this module the default settings for the core
+This module represents RaionPi's settings management. Within this module the default settings for the core
 application are defined and the instance of the :class:`Settings` is held, which offers getter and setter
 methods for the raw configuration values as well as various convenience methods to access the paths to base folders
 of various types and the configuration file itself.
@@ -21,7 +21,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 import sys
 import os
@@ -46,9 +46,9 @@ def settings(init=False, basedir=None, configfile=None):
 	        (False, default). If this is set to True and the plugin manager has already been initialized, a :class:`ValueError`
 	        will be raised. The same will happen if the plugin manager has not yet been initialized and this is set to
 	        False.
-	    basedir (str): Path of the base directoy for all of 3DRaion's settings, log files, uploads etc. If not set
-	        the default will be used: ``~/.octoprint`` on Linux, ``%APPDATA%/3DRaion`` on Windows and
-	        ``~/Library/Application Support/3DRaion`` on MacOS.
+	    basedir (str): Path of the base directoy for all of RaionPi's settings, log files, uploads etc. If not set
+	        the default will be used: ``~/.octoprint`` on Linux, ``%APPDATA%/RaionPi`` on Windows and
+	        ``~/Library/Application Support/RaionPi`` on MacOS.
 	    configfile (str): Path of the configuration file (``config.yaml``) to work on. If not set the default will
 	        be used: ``<basedir>/config.yaml`` for ``basedir`` as defined above.
 
@@ -334,11 +334,11 @@ class NoSuchSettingsPath(BaseException):
 
 class Settings(object):
 	"""
-	The :class:`Settings` class allows managing all of 3DRaion's settings. It takes care of initializing the settings
+	The :class:`Settings` class allows managing all of RaionPi's settings. It takes care of initializing the settings
 	directory, loading the configuration from ``config.yaml``, persisting changes to disk etc and provides access
 	methods for getting and setting specific values from the overall settings structure via paths.
 
-	A general word on the concept of paths, since they play an important role in 3DRaion's settings management. A
+	A general word on the concept of paths, since they play an important role in RaionPi's settings management. A
 	path is basically a list or tuple consisting of keys to follow down into the settings (which are basically like
 	a ``dict``) in order to set or retrieve a specific value (or more than one). For example, for a settings
 	structure like the following::

@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 from flask import request, jsonify, make_response, url_for
 
@@ -329,7 +329,7 @@ def gcodeFileCommand(filename, target):
 			return make_response("Cannot slice {filename}, not an STL file".format(**locals()), 415)
 
 		if slicer_instance.get_slicer_properties()["same_device"] and (printer.is_printing() or printer.is_paused()):
-			# slicer runs on same device as 3DRaion, slicing while printing is hence disabled
+			# slicer runs on same device as RaionPi, slicing while printing is hence disabled
 			return make_response("Cannot slice on {slicer} while printing due to performance reasons".format(**locals()), 409)
 
 		if "gcode" in data and data["gcode"]:

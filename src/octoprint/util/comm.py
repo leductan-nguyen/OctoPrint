@@ -1226,7 +1226,7 @@ class MachineCom(object):
 						self.close()
 
 			except:
-				self._logger.exception("Something crashed inside the serial connection loop, please report this in 3DRaion's bug tracker:")
+				self._logger.exception("Something crashed inside the serial connection loop, please report this in RaionPi's bug tracker:")
 
 				errorMsg = "See octoprint.log for details"
 				self._log(errorMsg)
@@ -1469,7 +1469,7 @@ class MachineCom(object):
 				self._logger.exception(error_message)
 
 				if "failed to set custom baud rate" in exception_string.lower():
-					self._log("Your installation does not support custom baudrates (e.g. 250000) for connecting to your printer. This is a problem of the pyserial library that 3DRaion depends on. Please update to a pyserial version that supports your baudrate or switch your printer's firmware to a standard baudrate (e.g. 115200). See https://github.com/foosel/OctoPrint/wiki/OctoPrint-support-for-250000-baud-rate-on-Raspbian")
+					self._log("Your installation does not support custom baudrates (e.g. 250000) for connecting to your printer. This is a problem of the pyserial library that RaionPi depends on. Please update to a pyserial version that supports your baudrate or switch your printer's firmware to a standard baudrate (e.g. 115200). See https://github.com/foosel/OctoPrint/wiki/OctoPrint-support-for-250000-baud-rate-on-Raspbian")
 
 				return False
 

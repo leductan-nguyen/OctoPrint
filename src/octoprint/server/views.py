@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2015 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2015 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 import os
 import datetime
@@ -162,7 +162,7 @@ def index():
 		webcam=(gettext("Webcam"), dict(template="dialogs/settings/webcam.jinja2", _div="settings_webcam", custom_bindings=False)),
 		api=(gettext("API"), dict(template="dialogs/settings/api.jinja2", _div="settings_api", custom_bindings=False)),
 
-		section_octoprint=(gettext("3DRaion"), None),
+		section_octoprint=(gettext("RaionPi"), None),
 
 		folders=(gettext("Folders"), dict(template="dialogs/settings/folders.jinja2", _div="settings_folders", custom_bindings=False)),
 		appearance=(gettext("Appearance"), dict(template="dialogs/settings/appearance.jinja2", _div="settings_appearance", custom_bindings=False)),
@@ -183,8 +183,8 @@ def index():
 	# about dialog
 
 	templates["about"]["entries"] = dict(
-		about=("About 3DRaion", dict(template="dialogs/about/about.jinja2", _div="about_about", custom_bindings=False)),
-		license=("3DRaion License", dict(template="dialogs/about/license.jinja2", _div="about_license", custom_bindings=False)),
+		about=("About RaionPi", dict(template="dialogs/about/about.jinja2", _div="about_about", custom_bindings=False)),
+		license=("RaionPi License", dict(template="dialogs/about/license.jinja2", _div="about_license", custom_bindings=False)),
 		thirdparty=("Third Party Licenses", dict(template="dialogs/about/thirdparty.jinja2", _div="about_thirdparty", custom_bindings=False)),
 		authors=("Authors", dict(template="dialogs/about/authors.jinja2", _div="about_authors", custom_bindings=False)),
 		changelog=("Changelog", dict(template="dialogs/about/changelog.jinja2", _div="about_changelog", custom_bindings=False)),

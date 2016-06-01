@@ -8,16 +8,16 @@ $(function() {
 
         self.brand = ko.pureComputed(function() {
             if (self.name())
-                return gettext("3DRaion") + ": " + self.name();
+                return gettext("RaionPi") + ": " + self.name();
             else
-                return gettext("3DRaion");
+                return gettext("RaionPi");
         });
 
         self.title = ko.pureComputed(function() {
             if (self.name())
-                return self.name() + " [" + gettext("3DRaion") + "]";
+                return self.name() + " [" + gettext("RaionPi") + "]";
             else
-                return gettext("3DRaion");
+                return gettext("RaionPi");
         });
     }
 

@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 import logging
 
@@ -158,7 +158,7 @@ def getSettings():
 			process_plugin_result(plugin._identifier, result)
 		except TypeError:
 			logger.warn("Could not load settings for plugin {name} ({version}) since it called super(...)".format(name=plugin._plugin_name, version=plugin._plugin_version))
-			logger.warn("in a way which has issues due to 3DRaion's dynamic reloading after plugin operations.")
+			logger.warn("in a way which has issues due to RaionPi's dynamic reloading after plugin operations.")
 			logger.warn("Please contact the plugin's author and ask to update the plugin to use a direct call like")
 			logger.warn("octoprint.plugin.SettingsPlugin.on_settings_load(self) instead.")
 		except:
@@ -292,7 +292,7 @@ def setSettings():
 					plugin.on_settings_save(data["plugins"][plugin_id])
 				except TypeError:
 					logger.warn("Could not save settings for plugin {name} ({version}) since it called super(...)".format(name=plugin._plugin_name, version=plugin._plugin_version))
-					logger.warn("in a way which has issues due to 3DRaion's dynamic reloading after plugin operations.")
+					logger.warn("in a way which has issues due to RaionPi's dynamic reloading after plugin operations.")
 					logger.warn("Please contact the plugin's author and ask to update the plugin to use a direct call like")
 					logger.warn("octoprint.plugin.SettingsPlugin.on_settings_save(self, data) instead.")
 				except:

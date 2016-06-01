@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-In this module resides the core data structures and logic of the plugin system. It is implemented in an 3DRaion-agnostic
+In this module resides the core data structures and logic of the plugin system. It is implemented in an RaionPi-agnostic
 way and could be extracted into a separate Python module in the future.
 
 .. autoclass:: PluginManager
@@ -18,7 +18,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2014 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2014 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 
 import os

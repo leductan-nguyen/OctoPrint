@@ -3,7 +3,7 @@ from __future__ import absolute_import
 
 __author__ = "Gina Häußge <osd@foosel.net>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
-__copyright__ = "Copyright (C) 2015 The 3DRaion Project - Released under terms of the AGPLv3 License"
+__copyright__ = "Copyright (C) 2015 The RaionPi Project - Released under terms of the AGPLv3 License"
 
 
 import octoprint.plugin
@@ -276,11 +276,11 @@ class PluginManagerPlugin(octoprint.plugin.SimpleApiPlugin,
 
 		# The final output of a pip install command looks something like this:
 		#
-		#   Successfully installed 3DRaion-Plugin-1.0 Dependency-One-0.1 Dependency-Two-9.3
+		#   Successfully installed RaionPi-Plugin-1.0 Dependency-One-0.1 Dependency-Two-9.3
 		#
 		# or this:
 		#
-		#   Successfully installed 3DRaion-Plugin Dependency-One Dependency-Two
+		#   Successfully installed RaionPi-Plugin Dependency-One Dependency-Two
 		#   Cleaning up...
 		#
 		# So we'll need to fetch the "Successfully installed" line, strip the "Successfully" part, then split by whitespace
@@ -331,7 +331,7 @@ class PluginManagerPlugin(octoprint.plugin.SimpleApiPlugin,
 					new_plugin = plugin
 					break
 		else:
-			self._logger.warn("The plugin was installed successfully, but couldn't be found afterwards to initialize properly during runtime. Please restart 3DRaion.")
+			self._logger.warn("The plugin was installed successfully, but couldn't be found afterwards to initialize properly during runtime. Please restart RaionPi.")
 			result = dict(result=True, url=url, needs_restart=True, needs_refresh=True, was_reinstalled=False, plugin="unknown")
 			self._send_result_notification("install", result)
 			return jsonify(result)
@@ -597,7 +597,7 @@ class PluginManagerPlugin(octoprint.plugin.SimpleApiPlugin,
 			if not any(octo_compat.startswith(c) for c in ("<", "<=", "!=", "==", ">=", ">", "~=", "===")):
 				octo_compat = ">={}".format(octo_compat)
 
-			s = next(pkg_resources.parse_requirements("3DRaion" + octo_compat))
+			s = next(pkg_resources.parse_requirements("RaionPi" + octo_compat))
 			if octoprint_version in s:
 				break
 		else:
@@ -679,7 +679,7 @@ class PluginManagerPlugin(octoprint.plugin.SimpleApiPlugin,
 __plugin_name__ = "Plugin Manager"
 __plugin_author__ = "Gina Häußge"
 __plugin_url__ = "https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager"
-__plugin_description__ = "Allows installing and managing 3DRaion plugins"
+__plugin_description__ = "Allows installing and managing RaionPi plugins"
 __plugin_license__ = "AGPLv3"
 
 def __plugin_load__():

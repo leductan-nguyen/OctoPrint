@@ -610,18 +610,18 @@ $(function() {
 
                     if (unknown) {
                         titleSuccess = _.sprintf(gettext("Plugin installed"));
-                        textSuccess = gettext("A plugin was installed successfully, however it was impossible to detect which one. Please Restart 3DRaion to make sure everything will be registered properly");
+                        textSuccess = gettext("A plugin was installed successfully, however it was impossible to detect which one. Please Restart RaionPi to make sure everything will be registered properly");
                         textRestart = textSuccess;
                         textReload = textSuccess;
                     } else if (data.was_reinstalled) {
                         titleSuccess = _.sprintf(gettext("Plugin \"%(name)s\" reinstalled"), {name: name});
                         textSuccess = gettext("The plugin was reinstalled successfully");
-                        textRestart = gettext("The plugin was reinstalled successfully, however a restart of 3DRaion is needed for that to take effect.");
+                        textRestart = gettext("The plugin was reinstalled successfully, however a restart of RaionPi is needed for that to take effect.");
                         textReload = gettext("The plugin was reinstalled successfully, however a reload of the page is needed for that to take effect.");
                     } else {
                         titleSuccess = _.sprintf(gettext("Plugin \"%(name)s\" installed"), {name: name});
                         textSuccess = gettext("The plugin was installed successfully");
-                        textRestart = gettext("The plugin was installed successfully, however a restart of 3DRaion is needed for that to take effect.");
+                        textRestart = gettext("The plugin was installed successfully, however a restart of RaionPi is needed for that to take effect.");
                         textReload = gettext("The plugin was installed successfully, however a reload of the page is needed for that to take effect.");
                     }
 
@@ -652,7 +652,7 @@ $(function() {
 
                     titleSuccess = _.sprintf(gettext("Plugin \"%(name)s\" uninstalled"), {name: name});
                     textSuccess = gettext("The plugin was uninstalled successfully");
-                    textRestart = gettext("The plugin was uninstalled successfully, however a restart of 3DRaion is needed for that to take effect.");
+                    textRestart = gettext("The plugin was uninstalled successfully, however a restart of RaionPi is needed for that to take effect.");
                     textReload = gettext("The plugin was uninstalled successfully, however a reload of the page is needed for that to take effect.");
 
                     titleError = gettext("Something went wrong");
@@ -669,7 +669,7 @@ $(function() {
 
                     titleSuccess = _.sprintf(gettext("Plugin \"%(name)s\" enabled"), {name: name});
                     textSuccess = gettext("The plugin was enabled successfully.");
-                    textRestart = gettext("The plugin was enabled successfully, however a restart of 3DRaion is needed for that to take effect.");
+                    textRestart = gettext("The plugin was enabled successfully, however a restart of RaionPi is needed for that to take effect.");
                     textReload = gettext("The plugin was enabled successfully, however a reload of the page is needed for that to take effect.");
 
                     titleError = gettext("Something went wrong");
@@ -686,7 +686,7 @@ $(function() {
 
                     titleSuccess = _.sprintf(gettext("Plugin \"%(name)s\" disabled"), {name: name});
                     textSuccess = gettext("The plugin was disabled successfully.");
-                    textRestart = gettext("The plugin was disabled successfully, however a restart of 3DRaion is needed for that to take effect.");
+                    textRestart = gettext("The plugin was disabled successfully, however a restart of RaionPi is needed for that to take effect.");
                     textReload = gettext("The plugin was disabled successfully, however a reload of the page is needed for that to take effect.");
 
                     titleError = gettext("Something went wrong");
