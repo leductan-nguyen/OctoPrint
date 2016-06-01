@@ -98,7 +98,7 @@ default_settings = {
 	},
 	"server": {
 		"host": "0.0.0.0",
-		"port": 80,
+		"port": 5000,
 		"firstRun": False, #tan
 		"secretKey": None,
 		"reverseProxy": {
