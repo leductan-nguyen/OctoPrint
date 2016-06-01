@@ -226,7 +226,7 @@ default_settings = {
 			"disabled": {
 				"navbar": ["plugin_announcements"], #tan
 				"sidebar": [],
-				"tab": ["gcodeviewer"], #tan
+				"tab": ["gcodeviewer", "terminal"], #tan
 				"settings": [
 					"section_printer", "terminalfilters", "gcodescripts", #tan
 					"section_features", "feature", "api", #tan
