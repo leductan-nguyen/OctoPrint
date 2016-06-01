@@ -1,4 +1,4 @@
-change to new branch
+merge new branch
 
 # OctoPrint Changelog
 
