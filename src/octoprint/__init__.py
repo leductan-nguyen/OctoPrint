@@ -6,7 +6,8 @@ from octoprint.server import Server
 #~~ version
 
 from ._version import get_versions
-__version__ = get_versions()['version']
+#__version__ = get_versions()['version'] #tan
+__version__ = "1.0beta"
 del get_versions
 
 #~~ main class
