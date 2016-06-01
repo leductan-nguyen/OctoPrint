@@ -1,6 +1,7 @@
+cd /home/pi/RaionPi/
 git pull
 ./venv/bin/python setup.py install
 echo Update finished.
 echo Now restart server...
-octoprint --daemon restart
+raionpi --daemon restart
 echo Done. Server restarted.
